@@ -1,0 +1,32 @@
+import React,{useState} from "react"
+import {UserInput} from "../normal/components/inputHook"
+import { useColors } from "../ColorProvider";
+export default function AddColorFormNew(){
+    const {addColor}=useColors();
+     const [titleProps,resetTitle] = UserInput("")
+     const [colorProps,resetColor] = UserInput("")
+    const submit = e=>{
+        e.preventDefault()
+        addColor(titleProps.value, colorProps.value)
+        resetColor("")
+        resetTitle("")
+    }
+    return (
+        <form onSubmit={submit}>
+            <input
+             {...titleProps}
+             type="text"
+             placeholder="color title"
+             required
+             >
+            </input>
+            <input
+               {...colorProps}
+                type="color"
+                required
+                >
+            </input>
+            <button>Add</button>
+        </form>
+    )
+}

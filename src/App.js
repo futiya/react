@@ -1,25 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {  Component, useState } from 'react';
+import Star from './normal/components/Star';
+import StarRating from './normal/components/StarRating';
+import Colors from './normal/components/Colors';
+import ColorList from './lesson3/ColorList';
+import Children from './normal/components/Children'
+import Example from './normal/components/Click';
+import AddColorForm from './lesson3/AddColorForm'
+import AddColorFormNew from './normal/components/AddColorFormNew'
+import data from './normal/components/data'
+export default function App(){
+    const [colors,setColors] = useState(data);
+     
+ 
+    return ( 
+        <div>
+          <AddColorForm   />
+          <ColorList  ></ColorList>
+        </div>
+        
+      // <Children>
+      //   <p>h1</p>
+      //   <h2>header</h2>
+      // </Children>
+      // <Example></Example>
+       );
 }
 
-export default App;
